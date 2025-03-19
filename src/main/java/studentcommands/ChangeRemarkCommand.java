@@ -3,13 +3,12 @@ package studentcommands;
 import exception.TASyncException;
 import students.Student;
 import students.StudentList;
-import taskCommands.Command;
 import java.util.logging.*;
 
 /**
  * Represents the "CHANGE_REMARK" command that updates the remark of a student.
  */
-public class ChangeRemarkCommand implements Command<StudentList> {
+public class ChangeRemarkCommand implements StudentCommand {
 
     // Logger instance for this class
     private static final Logger logger = Logger.getLogger(ChangeRemarkCommand.class.getName());

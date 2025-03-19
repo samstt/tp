@@ -7,7 +7,7 @@ import task.Todo;
  * Represents the "TODO" command that creates a new todo task.
  * The command expects a description for the todo task.
  */
-public class TodoCommand implements Command<TaskList> {
+public class TodoCommand implements TaskCommand {
     /**
      * Executes the "TODO" command by creating a new todo task with the provided description.
      * The new todo task is added to the task list.

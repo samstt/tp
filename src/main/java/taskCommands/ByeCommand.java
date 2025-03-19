@@ -6,7 +6,7 @@ import task.TaskList;
  * Represents the "Bye" command that exits the application.
  * When this command is executed, it prints a goodbye message to the user.
  */
-public class ByeCommand implements Command<TaskList> {
+public class ByeCommand implements TaskCommand {
     /**
      * Executes the "Bye" command by printing a farewell message.
      *

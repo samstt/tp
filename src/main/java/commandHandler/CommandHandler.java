@@ -1,59 +1,40 @@
 package commandHandler;
 
+import students.StudentList;
 import taskCommands.ByeCommand;
-import taskCommands.Command;
+import taskCommands.TaskCommand;
+import studentcommands.StudentCommand;
 import task.TaskList;
 
-/**
- * The CommandHandler class is responsible for executing commands by interacting with the TaskList.
- * It uses the Command object created by the CommandFactory to execute specific tasks.
- * <p>
- * Example:
- * Given a command like "TODO Read book", it will find the appropriate command (e.g., TodoCommand)
- * and call the execute method with the necessary parts.
- */
 public class CommandHandler {
     private final TaskList taskList;
-    private final Command taskCommand;
+    private final StudentList studentList;
+    private final Object command; // Can be either TaskCommand or StudentCommand
     private String parts;
 
-    /**
-     * Constructs a CommandHandler instance with the TaskList and command parts.
-     * <p>
-     * The constructor takes in an array of command strings, where the first element is the command name
-     * (which is used to create the Command object), and the second element is the associated data.
-     *
-     * @param taskList The TaskList object that the command will operate on.
-     * @param commands An array containing the command name and its associated data.
-     */
-    public CommandHandler(TaskList taskList, String[] commands) {
+    public CommandHandler(TaskList taskList, StudentList studentList, String[] commands) {
         this.taskList = taskList;
-        // Ensure the input is valid before proceeding
+        this.studentList = studentList;
         if (commands.length < 2) {
             System.out.println("Invalid command format. Please use: /add -[type] [task details]");
-            taskCommand = null;
+            command = null;
             return;
         }
 
-        // Reconstruct the original command string to pass it to CommandFactory
         String fullCommand = String.join(" ", commands);
-        taskCommand = CommandFactory.createCommand(fullCommand);
+        command = CommandFactory.createCommand(fullCommand);
 
-        // Extract task details if available
         this.parts = (commands.length > 2) ? commands[2] : "";
-
     }
 
-    /**
-     * Executes the current command. If the command is valid, it will invoke its execute method.
-     * If the command is of type ByeCommand, it returns false to indicate the termination of the program.
-     *
-     * @return true if the command is not of type ByeCommand; false otherwise.
-     */
     public boolean runCommand() {
-        if (taskCommand != null) {
-            taskCommand.execute(parts, taskList);
+        if (command != null) {
+            if (command instanceof TaskCommand) {
+                ((TaskCommand) command).execute(parts, taskList);
+            } else if (command instanceof StudentCommand) {
+                ((StudentCommand) command).execute(parts, studentList);
+            }
         }
-        return !(taskCommand instanceof ByeCommand);
+        return !(command instanceof ByeCommand); // Assuming ByeCommand is a TaskCommand
     }
 }

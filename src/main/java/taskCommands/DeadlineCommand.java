@@ -12,7 +12,7 @@ import java.util.Scanner;
  * Represents the "DEADLINE" command that creates a task with a deadline.
  * The command expects the description of the task and a "/by" tag for the deadline.
  */
-public class DeadlineCommand implements Command<TaskList> {
+public class DeadlineCommand implements TaskCommand {
     /**
      * Executes the "DEADLINE" command by parsing the task description and deadline,
      * and adding the deadline task to the task list.

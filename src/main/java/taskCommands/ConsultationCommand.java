@@ -12,7 +12,7 @@ import task.TaskList;
  * Represents the "CONSULTATION" command that creates a consultation task with specific timings.
  * The command expects the student's name along with "/from" and "/to" tags for start and end times.
  */
-public class ConsultationCommand implements Command<TaskList> {
+public class ConsultationCommand implements TaskCommand {
     /**
      * Executes the "CONSULTATION" command by parsing the student name, start time, and end time,
      * and adding the consultation task to the task list.

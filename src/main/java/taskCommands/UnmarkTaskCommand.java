@@ -7,7 +7,7 @@ import Util.IntegerChecker;
  * Represents the "UNMARK" command that marks a task as undone.
  * The command expects a task number to unmark the corresponding task.
  */
-public class UnmarkTaskCommand implements Command<TaskList> {
+public class UnmarkTaskCommand implements TaskCommand {
     /**
      * Executes the "UNMARK" command by marking the specified task as undone.
      * It verifies that the provided task number is valid before unmarking the task.

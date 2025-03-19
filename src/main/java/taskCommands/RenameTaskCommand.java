@@ -3,7 +3,7 @@ package taskCommands;
 import exception.TASyncException;
 import task.TaskList;
 
-public class RenameTaskCommand implements Command<TaskList> {
+public class RenameTaskCommand implements TaskCommand {
     @Override
     public void execute(String parts, TaskList taskList) {
         try {

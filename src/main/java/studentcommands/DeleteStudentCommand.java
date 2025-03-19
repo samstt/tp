@@ -3,7 +3,6 @@ package studentcommands;
 import exception.TASyncException;
 import students.Student;
 import students.StudentList;
-import taskCommands.Command;
 import java.util.logging.*;
 
 /**
@@ -11,7 +10,7 @@ import java.util.logging.*;
  * This command expects the input to contain the student's matric number.
  * If the student is found, they are removed from the list; otherwise, an error message is displayed.
  */
-public class DeleteStudentCommand implements Command<StudentList> {
+public class DeleteStudentCommand implements StudentCommand {
 
     // Logger instance for this class
     private static final Logger logger = Logger.getLogger(DeleteStudentCommand.class.getName());

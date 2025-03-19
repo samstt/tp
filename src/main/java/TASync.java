@@ -5,6 +5,7 @@ import Util.DataManager;
 import Util.UI;
 import commandHandler.CommandHandler;
 import commandHandler.CommandParser;
+import students.StudentList;
 import task.TaskList;
 
 import java.io.File;
@@ -34,7 +35,17 @@ public class TASync {
             System.out.println(attendanceList);
         } // just to check if attendanceFile imported correctly
 
+        UI ui = getUi();
+        ui.close();
+        dataManager.saveTutorials(tutorialList);
+        dataManager.saveAttendanceFile(attendanceFile);
+
+        System.out.println("All data saved successfully!");
+    }
+
+    private static UI getUi() {
         TaskList taskList = new TaskList();
+        StudentList studentList = new StudentList();
         UI ui = new UI();
         ui.printWelcome();
 
@@ -43,16 +54,12 @@ public class TASync {
             String input = ui.getUserCommand();
             CommandParser commandParser = new CommandParser(input);
             String[] parts = commandParser.getParts();
-            CommandHandler commandHandler = new CommandHandler(taskList, parts);
+            CommandHandler commandHandler = new CommandHandler(taskList, studentList, parts);
 
             isRunning = commandHandler.runCommand();
         }
 
         ui.printGoodbye();
-        ui.close();
-        dataManager.saveTutorials(tutorialList);
-        dataManager.saveAttendanceFile(attendanceFile);
-
-        System.out.println("All data saved successfully!");
+        return ui;
     }
 }

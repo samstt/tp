@@ -7,7 +7,7 @@ import Util.IntegerChecker;
  * Represents the "DELETE" command that deletes a task from the task list.
  * The command expects a task number to delete the corresponding task.
  */
-public class DeleteTaskCommand implements Command<TaskList> {
+public class DeleteTaskCommand implements TaskCommand {
     /**
      * Executes the "DELETE" command by checking if the input is a valid task number,
      * and deleting the corresponding task from the task list.

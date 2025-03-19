@@ -8,7 +8,7 @@ import Util.IntegerChecker;
  * Represents the "MARK" command that marks a task as completed.
  * The command expects a task number to mark the corresponding task as done.
  */
-public class MarkTaskCommand implements Command<TaskList> {
+public class MarkTaskCommand implements TaskCommand {
 
     /**
      * Executes the "MARK" command by marking the specified task as done.

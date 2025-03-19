@@ -11,7 +11,7 @@ import task.TaskList;
  * Represents the "EVENT" command that creates a task with event timings.
  * The command expects the description of the event and "/from" and "/to" tags for start and end times.
  */
-public class EventCommand implements Command<TaskList> {
+public class EventCommand implements TaskCommand {
     /**
      * Executes the "EVENT" command by parsing the task description, start time, and end time,
      * and adding the event task to the task list.

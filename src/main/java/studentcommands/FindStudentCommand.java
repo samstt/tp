@@ -3,14 +3,13 @@ package studentcommands;
 import exception.TASyncException;
 import students.Student;
 import students.StudentList;
-import taskCommands.Command;
 import java.util.logging.*;
 
 /**
  * Represents the "FIND_STUDENT" command that searches for students by name or matric number.
  * The command displays the students that match the keyword.
  */
-public class FindStudentCommand implements Command<StudentList> {
+public class FindStudentCommand implements StudentCommand {
 
     // Logger instance for this class
     private static final Logger logger = Logger.getLogger(FindStudentCommand.class.getName());
