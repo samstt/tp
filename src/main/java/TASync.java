@@ -72,19 +72,10 @@ public class TASync {
                     + new File(dataManager.getAttendanceFilePath()).getPath() + "\n");
         }
 
-        /*
-        for (AttendanceList attendanceList : attendanceFile.getAttendanceList()) {
-            System.out.println(attendanceList);
-        } // just to check if attendanceFile imported correctly
-        */
 
         TaskList taskList = new TaskList();
         StudentList studentlist = new StudentList();
 
-
-        assert tutorialList != null : "Error: tutorialList should not be null";
-        assert attendanceFile != null : "Error: attendanceFile should not be null";
-        assert ui != null : "Error: UI should not be null";
 
         ui.printWelcome();
         ui.displayDailySchedule(taskList, tutorialList);
@@ -106,7 +97,7 @@ public class TASync {
             String command = parts[0].toUpperCase();
             CommandHandler commandHandler;
             if ("ADD".equals(command) || "HELP".equals(command) || listType.equalsIgnoreCase("-p")) {
-                commandHandler = new CommandHandler(taskList, parts);
+                commandHandler = new CommandHandler<>(taskList, parts);
             } else if ("BYE".equals(command)) {
                 commandHandler = new CommandHandler(taskList, parts);
             } else if (listType.equalsIgnoreCase("-s")) {

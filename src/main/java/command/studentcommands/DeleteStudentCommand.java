@@ -7,6 +7,11 @@ import students.StudentList;
 import tutorial.TutorialClass;
 import tutorial.TutorialClassList;
 
+/**
+ * Represents the "DELETESTUDENT" command that removes a student from the student list
+ * of a specific tutorial class. The command searches for the student by their matric number
+ * and deletes them from the corresponding tutorial class.
+ */
 public class DeleteStudentCommand implements Command<TutorialClassList> {
 
     /**

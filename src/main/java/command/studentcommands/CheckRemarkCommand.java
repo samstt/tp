@@ -7,12 +7,17 @@ import tutorial.TutorialClass;
 import tutorial.TutorialClassList;
 import command.taskcommands.Command;
 
+/**
+ * Represents the "CHECK_REMARK" command that displays the remarks for a specific student
+ * in a given tutorial class. The command retrieves and prints the student's remark based on
+ * the provided tutorial class code and matric number.
+ */
 public class CheckRemarkCommand implements Command<TutorialClassList> {
 
     /**
      * Executes the "CHECK_REMARK" command to display the remarks for a specific student
      * in a tutorial class. The input string should contain the tutorial class code and
-     * the matric number of the student (format: &lt;TutorialClassCode&gt;, &lt;MatricNumber&gt;).
+     * the matric number of the student ((format: {@code <TutorialClassCode>, <MatricNumber>}).
      * If the input is invalid, the tutorial class is not found, or the student is not found,
      * an appropriate error message is displayed.
      *

@@ -10,9 +10,26 @@ import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Represents the "NEWSTUDENT" command that adds a new student to a specific tutorial class.
+ * The command processes the input string containing the student's details, validates the information,
+ * and adds the student to the corresponding tutorial class.
+ */
 public class NewStudentCommand implements Command<TutorialClassList> {
     private static final Logger logger = Logger.getLogger(NewStudentCommand.class.getName());
 
+    /**
+     * Executes the "NEWSTUDENT" command by adding a new student to the specified tutorial class.
+     * The input string should contain the student's name, date of birth, gender, contact number,
+     * matric number, and tutorial class code
+     * (format: {@code <StudentName>, <DOB>, <Gender>, <Contact>, <MatricNumber>, <TutorialClassCode>}).
+     * If the input is invalid or if any details are incorrect, appropriate error messages are displayed.
+     * If the student is successfully added, a success message is shown.
+     *
+     * @param parts The input string containing the student's details (name, DOB, gender, contact number,
+     *              matric number, tutorial class code).
+     * @param tutorialClassList The tutorial class list to search for the tutorial class and add the student to it.
+     */
     @Override
     public void execute(String parts, TutorialClassList tutorialClassList) {
         try {

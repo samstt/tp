@@ -8,8 +8,21 @@ import command.taskcommands.Command;
 
 import java.util.ArrayList;
 
+/**
+ * Represents the "LIST_TUTORIAL_STUDENTS" command that lists all students enrolled in a specific tutorial class.
+ * This command retrieves and displays the list of students in the tutorial class identified by its tutorial name.
+ * If the tutorial class is not found or the list is empty, an appropriate error message is displayed.
+ */
 public class ListTutorialStudentsCommand implements Command<TutorialClassList> {
 
+    /**
+     * Executes the "LIST_TUTORIAL_STUDENTS" command by listing all students in the specified tutorial class.
+     * If the tutorial class name is invalid or the class has no students enrolled, appropriate
+     * error messages are displayed.
+     *
+     * @param tutorialName       The name of the tutorial class to retrieve students from.
+     * @param tutorialClassList  The list of tutorial classes to search within.
+     */
     @Override
     // List all students in the given tutorial by tutorial name
     public void execute(String tutorialName, TutorialClassList tutorialClassList) {

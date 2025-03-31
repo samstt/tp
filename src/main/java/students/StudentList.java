@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Represents a list of students, allowing for the addition, removal, and retrieval of students by various identifiers,
+ * such as matric number and name. It also supports handling of duplicate names
+ * and user interaction for student identification.
+ */
 public class StudentList {
     private ArrayList<Student> students;
 

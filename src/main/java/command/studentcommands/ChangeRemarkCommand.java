@@ -7,12 +7,18 @@ import students.StudentList;
 import tutorial.TutorialClass;
 import tutorial.TutorialClassList;
 
+
+/**
+ * Represents the "CHANGE_REMARK" command that updates the remark of a student in a specific tutorial class.
+ * The command modifies the student's remark based on the provided tutorial class code, matric number,
+ * and new remark.
+ */
 public class ChangeRemarkCommand implements Command<TutorialClassList> {
 
     /**
      * Executes the "CHANGE_REMARK" command by updating the remark of a student in a specific tutorial class.
      * The input string should contain the tutorial class code, matric number,
-     * and the new remark (format: &lt;TutorialClassCode&gt;, &lt;MatricNumber&gt;, &lt;NewRemark&gt;).
+     * and the new remark (format: {@code <TutorialClassCode>, <MatricNumber>, <NewRemark>}).
      * If the input is invalid, the tutorial class is not found, or the student is not found,
      * an appropriate error message is displayed.
      *

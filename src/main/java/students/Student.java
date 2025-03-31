@@ -6,6 +6,10 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.Objects;
 
+/**
+ * Represents a student with personal details, including name, date of birth, gender, contact information,
+ * and matriculation number.
+ */
 public class Student {
     private String name;
     private LocalDate dateOfBirth;
