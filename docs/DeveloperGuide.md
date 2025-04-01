@@ -29,14 +29,41 @@ The `studentcommands` package includes commands that handle student-related func
 These commands interact with the tutorial classes and the student list, allowing users to manage student records 
 effectively. 
 
-#### 1. ChangeRemarkCommand
+
+#### 1. NewStudentCommand
+
+The NewStudentCommand is part of the `studentcommands` package and is responsible for adding a new student to a
+specific tutorial class.
+
+#### Implementation Details
+
+The NewStudentCommand class implements the Command<TutorialClassList> interface. It is responsible for parsing the input to
+extract the student’s details, validating them, and adding the student to the appropriate tutorial class.
+#### Operations
+
+The class implements the following main operation:
+
+- `NewStudentCommand#execute()`
+- Parses the input to extract the student’s name, date of birth (DOB), gender, contact number, matriculation number, and tutorial class code. 
+- Validates the student details to ensure they are correctly formatted and do not contain any errors. 
+- Retrieves the specified tutorial class based on the provided class code. 
+- Checks if the matriculation number already exists in the class. If it does, an error message is shown. 
+- Creates a new Student object and adds it to the student list of the tutorial class. 
+- Logs and displays a success message if the student is successfully added to the tutorial class. 
+- Handles any exceptions by displaying relevant error messages if validation fails or the tutorial class is not found.
+
+#### 2. DeleteStudentCommand
+#### Implementation Details
+#### Operations
+
+#### 3. ChangeRemarkCommand
 
 The `ChangeRemarkCommand` is part of the `studentcommands` package and is responsible for modifying the remark of a
 student in a specific tutorial class.
 
 #### Implementation Details
 
-The `ChangeRemarkCommand` class implements the `Command<TutorialClassList>` interface and modifies a student's remark based 
+The `ChangeRemarkCommand` class implements the `Command<TutorialClassList>` interface and modifies a student's remark based
 on the provided tutorial class code and matriculation number.
 
 #### Operations
@@ -49,10 +76,16 @@ The class implements the following main operation:
   - Updates the student's remark and displays a confirmation message.
   - If the tutorial class or student is not found, an error message is shown.
 
-This command is executed as part of the TASync system when a user provides a properly formatted input string. 
+This command is executed as part of the TASync system when a user provides a properly formatted input string.
 
-#### 2. CheckRemarkCommand
 
+#### 4. CheckRemarkCommand
+#### Implementation Details
+#### Operations
+
+#### 5. FindStudentCommand
+#### Implementation Details
+#### Operations
 
 
 ### Task Commands

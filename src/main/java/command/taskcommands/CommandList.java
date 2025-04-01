@@ -69,7 +69,7 @@ public enum CommandList {
         public void printCommand() {
             System.out.println(
                     "NEWSTUDENT: Adds a new student using provided information. " +
-                            "Usage: /NEWSTUDENT -t <name>,<dob>,<gender>,<contact>,<matric_number>,<tutorial_class>"
+                            "Usage: NEWSTUDENT -t <name>,<dob>,<gender>,<contact>,<matric_number>,<tutorial_class>"
             );
         }
     },
